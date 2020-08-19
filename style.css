@@ -18,7 +18,6 @@ body {
   font-family: "Source Sans Pro";
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
-  text-align: justify;
 }
 
 body {
@@ -29,18 +28,12 @@ header {
   background-color: #7159c1;
 }
 
-
-a {
-  text-decoration: none;
-}
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   width: 90%;
   max-width: 980px;
-  
   margin: auto;
 }
 
@@ -70,9 +63,11 @@ header nav ul li a {
 header nav ul li a:hover {
   background: rgba(255,255,255, 0.15)
 }
-h1{
-  color: white;
-}
+
+a{
+    text-decoration: none;
+} 
+
 h2 {
   color: rgb(75, 75, 75);
   font-size: 3.6rem;
@@ -101,21 +96,7 @@ h3 {
 .button:hover {
   opacity: 0.9;
 }
-.button_mais_Informacoes{
-  display: inline-block;
-  font-size: 1.6rem;
-  color: rgb(255, 255, 255);
-  background-color: rgb(113, 89, 193);
-  padding: 1px 10px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: all 150ms linear 0s;
-}
-.button_mais_Informacoes:hover {
-  opacity: 0.9;
-  color: black;
-  background-color: white;
-}
+
 
 /*=============== 
 introducao
@@ -127,42 +108,19 @@ section.introducao {
 section.introducao .container {
   width: 90%;
   max-width: 980px;
+
   margin: auto;
+
   display: flex;
-  text-align: center;
 }
 
 section.introducao p {
-  color: rgb(154, 142, 191);
+  color: rgb(56, 53, 65);
   font-size: 1.8rem;
   line-height: 3.2rem;
   margin: 10px 0px 0px;
 }
 
-/*=============== 
-conteudo
-==================*/
-
-
-section.conteudo {
-  margin: 80px 0;
-}
-
-section.conteudo .container {
-  width: 90%;
-  max-width: 980px;
-
-  margin: auto;
-
-  display: flex;
-}
-
-section.conteudo p {
-  color: rgb(75, 75, 77);
-  font-size: 1.8rem;
-  line-height: 3.2rem;
-  margin: 10px 0px 0px;
-}
 
 
 /*=============== 
@@ -174,11 +132,24 @@ main {
 /*=============== 
 CARDS
 ==================*/
-.cards {
+.conteudo{
   width: 90%;
   max-width: 980px;
   margin: auto;
-
+  display: flex;
+}
+.conteudo p{
+    color: rgb(75, 75, 77);
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin: 10px 0px 0px;
+}
+.cards {
+  padding-top:5%;
+  padding-bottom:10%;
+  width: 90%;
+  max-width: 980px;
+  margin: auto;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -195,24 +166,22 @@ CARDS
 .card {
   display: flex;
   flex-direction: column;
+  background-color: #7159c1;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-  padding-top:10%;
 
 }
 
 .card:hover {
   transform: translateY(-7px);
- 
 }
- 
+
 .image {
   width: 100%;
-  padding-top: 56.25%; 
-  border-radius: 10%;
+  padding-top: 56.25%; /* 16:9 */
+
   overflow: hidden;
   position: relative;
- 
 }
 
 .image img {
@@ -220,7 +189,6 @@ CARDS
   position: absolute;
   top: 50%;
   left: 50%;
-  
   transform: translate(-50%, -50%);
 }
 
@@ -244,11 +212,28 @@ CARDS
   border-radius: 20px;
   background-color: #7159c1;
   filter: brightness(90%);
-} 
+}
+.button_mais_Informacoes{
+    display: inline-block;
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(113, 89, 193);
+    padding: 1px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 150ms linear 0s;
+  }
+  .button_mais_Informacoes:hover {
+    opacity: 0.9;
+    color: black;
+    background-color: white;
+  }
 
 /*=============== 
 MODAL
-==================*/
+==================
+*/
+
 .modal-overlay {
   display: flex;
   align-items: center;
@@ -334,18 +319,19 @@ MODAL
   z-index: -99;
   background-color: white;
 }
+
 .video-foreground,
-.video-background iframe {
+.video-background img {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 90%;
+  border-radius: 2%;
+  height: 95%;
+  align-items: center;
   transform: translate(-50%, -50%);
 }
 
-
-
+ 
 /*=============== 
 FORM
 ==================*/
