@@ -67,7 +67,10 @@ header nav ul li a:hover {
 a{
     text-decoration: none;
 } 
-
+h1{
+  color: white;
+  font-size: 5.2rem;
+}
 h2 {
   color: rgb(75, 75, 75);
   font-size: 3.6rem;
@@ -144,7 +147,7 @@ CARDS
     line-height: 3.2rem;
     margin: 10px 0px 0px;
 }
-.cards {
+.cards_jpg{
   padding-top:5%;
   padding-bottom:10%;
   width: 90%;
@@ -163,7 +166,7 @@ CARDS
   color: #ecf0f1;
 }
 
-.card {
+.card_jpg {
   display: flex;
   flex-direction: column;
   background-color: #7159c1;
@@ -172,11 +175,11 @@ CARDS
 
 }
 
-.card:hover {
+.card_jpg:hover {
   transform: translateY(-7px);
 }
 
-.image {
+.image_jpg {
   width: 100%;
   padding-top: 56.25%; /* 16:9 */
 
@@ -184,7 +187,7 @@ CARDS
   position: relative;
 }
 
-.image img {
+.image_jpg img {
   width: 100%;
   position: absolute;
   top: 50%;
