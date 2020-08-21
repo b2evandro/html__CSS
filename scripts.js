@@ -88,7 +88,21 @@ const gifs = [
   {
     gif_id: "img/gif/G012.gif",
     thumb: "img/gif/G012.gif"
+  },
+  {
+    gif_id: "img/gif/G008.gif",
+    thumb: "img/gif/G008.gif"
+  },
+  {
+    gif_id: "img/gif/G032.gif",
+    thumb: "img/gif/G032.gif"
+  },
+  {
+    gif_id: "img/gif/G002.gif",
+    thumb: "img/gif/G002.gif"
   }
+
+
 ];
 
 gifs.map(gif => {
