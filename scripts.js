@@ -1,5 +1,5 @@
 // Make Cards
-const sectionCards_jpg = document.querySelector("section.cards_jpg ");
+const sectionCards_jpg = document.querySelector("section.cards_jpg");
 const card_jpg = document.querySelector("div.card_jpg");
 const jpgs = [
   {
@@ -102,7 +102,7 @@ card_gif.remove()
 // Modal actions
 const cards_gif = [...document.querySelectorAll(".cards_gif .card_gif")];
 
-cards_gif.map(card_gif => {
+cards_gif.forEach(card_gif => {
   card_gif.addEventListener("click", () => {
     modal.querySelector(
       ".Im1"
