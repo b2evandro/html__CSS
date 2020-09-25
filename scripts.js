@@ -74,6 +74,10 @@ document.onkeydown = function (evt) {
   }
 };
 
+function scrollTo(hash) {
+  location.hash = "#" + hash;
+}
+
 const sectionCards_gif = document.querySelector("section.cards_gif");
 const card_gif = document.querySelector("div.card_gif");
 const gifs = [
