@@ -1,3 +1,10 @@
+const toggle = document.getElementById("toggle");
+
+toggle.addEventListener("change", (e) => {
+  document.body.classList.toggle("dark", e.target.checked);
+});
+
+
 // Make Cards
 const sectionCards_jpg = document.querySelector("section.cards_jpg");
 const card_jpg = document.querySelector("div.card_jpg");
