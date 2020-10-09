@@ -1,3 +1,10 @@
+const toggle = document.getElementById("toggle");
+
+toggle.addEventListener("change", (e) => {
+  document.body.classList.toggle("dark", e.target.checked);
+});
+
+
 // Make Cards
 const sectionCards_jpg = document.querySelector("section.cards_jpg");
 const card_jpg = document.querySelector("div.card_jpg");
@@ -73,6 +80,10 @@ document.onkeydown = function (evt) {
     closemodal();
   }
 };
+
+function scrollTo(hash) {
+  location.hash = "#" + hash;
+}
 
 const sectionCards_gif = document.querySelector("section.cards_gif");
 const card_gif = document.querySelector("div.card_gif");

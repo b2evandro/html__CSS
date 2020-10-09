@@ -18,6 +18,7 @@ body {
   font-family: "Source Sans Pro";
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.3s linear, color 0.3s linear;
 }
 
 body {
@@ -293,12 +294,14 @@ MODAL
   height: 100%;
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.6);
+  
   opacity: 0;
   visibility: hidden;
 }
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
+  
 }
 .modal {
   display: flex;
@@ -349,6 +352,7 @@ MODAL
   visibility: visible;
   opacity: 1;
   transform: scale(1);
+  
 }
 .modal.active .modal-content {
   opacity: 1;
@@ -366,6 +370,7 @@ MODAL
   left: 0;
   z-index: -99;
   background-color: white;
+  
 }
 
 .video-foreground,
@@ -379,7 +384,37 @@ MODAL
   transform: translate(-50%, -50%);
 }
 
- 
+body.dark{
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.dark .video-background{
+  background-color: #1f1f1f;
+}
+.toggle-container {
+  top: 10px;
+  right: 10px;
+}
+
+label {
+  background-color: rebeccapurple;
+  border-radius: 50%;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s linear;
+}
+
+body.dark label {
+  background-color: #fff;
+}
+
+input {
+  visibility: hidden;
+}
 /*=============== 
 FORM
 ==================*/

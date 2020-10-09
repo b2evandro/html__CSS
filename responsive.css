@@ -5,11 +5,11 @@ html {
 }
 
 @media (max-width: 630px) {
-    .hero .container {
+    .introducao .container {
         flex-direction: column;
         text-align: center;
     }
-    .hero .container img {
+    .introducao .container img {
         order: -1;
     }
     .form-group {
