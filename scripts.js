@@ -1,13 +1,8 @@
-const toggle = document.getElementById("toggle");
 
-toggle.addEventListener("change", (e) => {
-  document.body.classList.toggle("dark", e.target.checked);
-});
 
 
 // Make Cards
-const sectionCards_jpg = document.querySelector("section.cards_jpg");
-const card_jpg = document.querySelector("div.card_jpg");
+
 const jpgs = [
   {
     jpg_id: "img/jpg/D011.jpg",
@@ -34,59 +29,6 @@ const jpgs = [
     thumb: "img/jpg/NewZeland_1024.jpg"
   }
 ];
-
-jpgs.map(jpg => {
-  const card_jpgClone = card_jpg.cloneNode(true);
-  card_jpgClone.querySelector("img").src = jpg.thumb;
-  card_jpgClone.setAttribute("id", jpg.jpg_id);
-  sectionCards_jpg.appendChild(card_jpgClone);
-});
-card_jpg.remove();
-// Modal actions
-const modalOverlay = document.querySelector(".modal-overlay");
-const modal = document.querySelector(".modal");
-const cards_jpg = [...document.querySelectorAll(".cards_jpg .card_jpg")];
-
-cards_jpg.forEach(card_jpg => {
-  card_jpg.addEventListener("click", () => {
-    modal.querySelector(
-      ".Im1"
-    ).src = `${card_jpg.getAttribute("id")}`;
-    modalOverlay.classList.add("active");
-    modal.classList.add("active");
-    document.querySelector("body").style.overflow = "hidden";
-  });
-});
-
-function closemodal() {
-  modalOverlay.classList.remove("active");
-  modal.classList.remove("active");
-  modal.querySelector(".Im1").src = ``;
-  document.querySelector("body").style.overflow = "initial";
-}
-
-document.querySelector(".close-modal").addEventListener("click", () => {
-  closemodal();
-});
-document.onkeydown = function (evt) {
-  evt = evt || window.event;
-  var isEscape = false;
-  if ("key" in evt) {
-    isEscape = (evt.key === "Escape" || evt.key === "Esc");
-  } else {
-    isEscape = (evt.keyCode === 27);
-  }
-  if (isEscape) {
-    closemodal();
-  }
-};
-
-function scrollTo(hash) {
-  location.hash = "#" + hash;
-}
-
-const sectionCards_gif = document.querySelector("section.cards_gif");
-const card_gif = document.querySelector("div.card_gif");
 const gifs = [
   {
     gif_id: "img/gif/G001.gif",
@@ -116,22 +58,39 @@ const gifs = [
 
 ];
 
-gifs.map(gif => {
-  const card_gifClone = card_gif.cloneNode(true);
-  card_gifClone.querySelector("img").src = gif.thumb;
-  card_gifClone.setAttribute("id", gif.gif_id);
-  sectionCards_gif.appendChild(card_gifClone);
+const section_jpg = document.querySelector("section.jpg");
+const jpg_card_default = document.querySelector("div.card_jpg");
+jpgs.map(jpg => {
+  const clone_jpg = jpg_card_default.cloneNode(true);
+  clone_jpg.querySelector("img").src = jpg.thumb;
+  clone_jpg.querySelector("img").setAttribute("id", jpg.jpg_id);
+  section_jpg.appendChild(clone_jpg);
 });
-card_gif.remove()
+jpg_card_default.remove();
+
+const section_gif = document.querySelector("section.gif");
+const gif_card_default = document.querySelector("div.card_gif");
+gifs.map(gif => {
+  const clone_gif = gif_card_default.cloneNode(true);
+  clone_gif.querySelector("img").src = gif.thumb;
+  clone_gif.querySelector("img").setAttribute("id", gif.gif_id);
+  section_gif.appendChild(clone_gif);
+});
+gif_card_default.remove()
+
 
 // Modal actions
-const cards_gif = [...document.querySelectorAll(".cards_gif .card_gif")];
 
-cards_gif.forEach(card_gif => {
-  card_gif.addEventListener("click", () => {
+const modalOverlay = document.querySelector(".modal-overlay");
+const modal = document.querySelector(".modal");
+
+const imagens = [...document.querySelectorAll(".card_jpg img, .card_gif img")];
+
+imagens.forEach(imagem => {
+  imagem.addEventListener("click", () => {
     modal.querySelector(
-      ".Im1"
-    ).src = `${card_gif.getAttribute("id")}`;
+      ".img-modal"
+    ).src = `${imagem.getAttribute("id")}`;
     modalOverlay.classList.add("active");
     modal.classList.add("active");
     document.querySelector("body").style.overflow = "hidden";
@@ -141,8 +100,30 @@ cards_gif.forEach(card_gif => {
 function closemodal() {
   modalOverlay.classList.remove("active");
   modal.classList.remove("active");
-  modal.querySelector(".Im1").src = ``;
+  modal.querySelector(".img-modal").src = ``;
   document.querySelector("body").style.overflow = "initial";
 }
+
+document.querySelector(".close-modal").addEventListener("click", () => {
+  closemodal();
+});
+
+document.querySelector("#back_to_top").addEventListener("click", () => {
+  document.body.scrollIntoView({
+    behavior: "smooth",
+  });
+});
+document.onkeydown = function (evt) {
+  evt = evt || window.event;
+  var isEscape = false;
+  if ("key" in evt) {
+    isEscape = (evt.key === "Escape" || evt.key === "Esc");
+  } else {
+    isEscape = (evt.keyCode === 27);
+  }
+  if (isEscape) {
+    closemodal();
+  }
+};
 
 // MENU RESPONSIVO

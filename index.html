@@ -15,9 +15,6 @@
     <header>
         <div class="container">
             <h1>Exercício</h1>
-            <div class="toggle-container">
-                <input type="checkbox" id="toggle" name="toggle" /><label for="toggle"></label>
-            </div>
             <div class="menu-section">
                 <div class="menu-toggle">
                     <div class="one"></div>
@@ -32,13 +29,13 @@
                         <li>
                             <a href="#gif">GIF</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#png">PNG</a>
                         </li>
                         <li>
                             <a href="#svg">svg</a>
-                        </li>
-                       
+                        </li> -->
+
                     </ul>
                 </nav>
             </div>
@@ -51,11 +48,10 @@
             <div>
                 <h2>O que é? </h2>
                 <p>
-                    Você já teve curiosisfsafsafdsfsdesfddade sobre o tipo de imagens e extenções existentes?
+                    Você já teve curiosidade sobre o tipo de imagens e extenções existentes?
                     JPG, GIF, PNG E SVG são algumas de muitas existes. Aqui poderá ter um gostinho e aprender mais
                     sobre.
                 </p>
-                <!-- <a href="#" class="button">Quero embarcar neste foguete!</a> -->
             </div>
             <img src="https://svgshare.com/i/NqV.svg" alt="" />
         </div>
@@ -88,11 +84,9 @@
                 </p>
             </div>
         </div>
-        <section class="cards_jpg" id="jpg_imagens_teste">
-            <div class="card_jpg">
-                <div class="image_jpg">
-                    <img src="img/jpg/D020.jpg" />
-                </div>
+        <section class="cards jpg" id="jpg_imagens_teste">
+            <div class="image card card_jpg">
+                <img src="img/jpg/D020.jpg" />
             </div>
         </section>
         <div class="conteudo">
@@ -118,49 +112,13 @@
                 </p>
             </div>
         </div>
-        <section class="cards_gif">
-            <div class="card_gif">
-                <div class="image_gif">
-                    <img src="img/gif/G008.gif" />
-                </div>
+        <section class="cards gif">
+            <div class="image card card_gif">
+                <img src="img/gif/G008.gif" />
             </div>
         </section>
 
-        <!--  <section class="cards">
-            <div class="card">
-                <div class="gif_sequencia">
-                    <img src="img/gif/G008.gif" />
-                </div>
-            </div>
-        </section> -->
     </main>
-    <!-- 
-    <section id="form">
-        <form action="">
-            <h3>Quero Estudar</h3>
-            <div class="form-group">
-                <input class="input-control" placeholder="Nome" />
-                <input type="email" class="input-control" placeholder="Email" />
-            </div>
-            <div class="form-group">
-                <input class="input-control" placeholder="Empresa" />
-            </div>
-            <div class="form-group">
-                <input class="input-control" placeholder="Endereço" />
-            </div>
-            <div class="form-group">
-                <input class="input-control" placeholder="Cidade" style="flex: 3 1" />
-                <input class="input-control" placeholder="Estado" style="flex: 1" />
-                <input class="input-control" placeholder="CEP" style="flex: 1" />
-            </div>
-
-            <div class="form-group">
-                <button type="submit" class="button">Save</button>
-
-            </div>
-
-        </form>
-    </section> -->
 
     <div class="modal-overlay">
         <div class="modal">
@@ -174,13 +132,18 @@
             <div class="modal-content">
                 <div class="video-background">
                     <div class="video-foreground">
-                        <img class="Im1" src="img/jpg/D020.jpg" frameborder="0"></img>
+                        <img class="img-modal" src="img/jpg/D020.jpg" frameborder="0"></img>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <footer>
+        <p>
+            © Copyright 2020. TODOS OS DIREITOS RESERVADOS
+        </p>
+        <a type="button" class="" aria-label="Subir até o topo da página" id='back_to_top'>Voltar ao topo</button>
+    </footer>
     <script src="scripts.js"></script>
     <script src="menu.js"></script>
 </body>
